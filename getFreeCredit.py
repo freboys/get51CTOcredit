@@ -14,7 +14,7 @@ def read_txt(path):
 for line in read_txt('userPass.txt'):
     username = line.split(' ')[0].strip()
     password = line.split(' ')[1].strip()
-    headers_pool = [
+    ua_pool = [
         'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.75 Safari/537.36',
         'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1',
         'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1',
@@ -24,7 +24,7 @@ for line in read_txt('userPass.txt'):
         'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.84 Safari/535.11 SE 2.X MetaSr 1.0',
     ]
 
-    headers = {'User-Agent': random.choice(headers_pool)}
+    headers = {'User-Agent': random.choice(ua_pool)}
     headers['Accept'] = 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
     headers['Accept-Encoding'] = 'gzip, deflate'
     headers['Accept-Language'] = 'zh-CN,zh;q=0.9'
