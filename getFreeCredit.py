@@ -86,4 +86,14 @@ for line in read_txt('userPass.txt'):
         f.close()
     time.sleep(3)
 
+    # 领取51CTO学院的学分
+    print("开始领取学分")
+    score_referer_url = 'http://edu.51cto.com/center/'
+    client.get(score_referer_url)
+    headers['Referer'] = score_referer_url
+    score_url = "http://edu.51cto.com/center/user/index/task"
+    resp_score = client.get(score_url, headers=headers)
+    print(resp_score.text)
+
+
 
